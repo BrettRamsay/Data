@@ -24,7 +24,7 @@ Query Results:
 
 ### STEP 2: Retrieve the two witness statements
 
-The next step requires to identify the two witnesses from `person` and retreive their testimony from `interview`. Unlike the opening instructions, there aren't any discrete parameters given to use in the query, so a simple WHERE + OR clause is out. Instead, each person will require a subquery (or CTE) with the reulsts being combined using the UNION operator. This will create a single table that can then be joined to `interview` using `person.id` as the foreign key.
+The next step requires to identify the two witnesses from `person` and retreive their testimony from `interview`. Unlike the opening instructions, there aren't any discrete parameters given to use in the query, so a simple WHERE + OR clause is out. Instead, each person will require a subquery (or CTE, which I much prefer) with the results being combined using the UNION operator. This will create a single table that can then be joined to `interview` using `person.id` as the foreign key.
 
 ```
 WITH w1 AS (
