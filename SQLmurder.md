@@ -24,7 +24,7 @@ Query Results:
 
 ### STEP 2: Retrieve the two witness statements
 
-The next step requires to identify the two witnesses from `person` and retreive their testimony from `witnesses`. Unlike the opening instructions, there aren't any discrete parameters given to use in the query, so a simple WHERE + OR clause is out. Instead, each person will require a subquery (or CTE) and then these two subqueries will be combined using the UNION operator. This will create a single table that can then be joined to `witnesses` using `person.id` as the foreign key.
+The next step requires to identify the two witnesses from `person` and retreive their testimony from `interview`. Unlike the opening instructions, there aren't any discrete parameters given to use in the query, so a simple WHERE + OR clause is out. Instead, each person will require a subquery (or CTE) with the reulsts being combined using the UNION operator. This will create a single table that can then be joined to `interview` using `person.id` as the foreign key.
 
 ```
 WITH w1 AS (
@@ -61,7 +61,7 @@ Query Results:
 
 ### Step 3: Use the two statements to find the killer
 
-The witness statements reference information that can be found on three different tables: `get_fit_now_member`, `get_fit_now_check_in`, and `drivers_license`. Only the gym tables have a relationship, so we'll have to use `person` as a bridge table since it has relationships with both `get_fit_now_member` and `drivers_license`. A CTE that combines the gym tables produces the unique member ID needed to join `person`.
+The witness statements reference information that can be found on three different tables: `get_fit_now_member`, `get_fit_now_check_in`, and `drivers_license`. Only the gym tables have a relationship, so we'll have to use `person` as a bridge table since it has relationships with both `get_fit_now_member` and `drivers_license`. A CTE that combines the gym tables produces the unique ID needed to join `person`.
 ```
 WITH gym AS 
 (SELECT name, person_id 
@@ -81,7 +81,7 @@ Query Results:
 |:--:|:--:|:--:|
 |67318|Jeremy Bowers|0H42W2|
 
-While we've caught the killer, using the killer's `person_ID` to retreive his statment from `interview` reveals there's a mastermind to be found.
+While we've caught the killer, using the killer's `person_id` to retreive his statment from `interview` reveals there's a mastermind to be found.
 
 >I was hired by a woman with a lot of money. I don't know her name but I know she's around 5'5" (65") or 5'7" (67"). She has red hair and she drives a Tesla Model S. I know that she attended the SQL Symphony Concert 3 times in December 2017.
 
@@ -125,4 +125,4 @@ Things I could've done better on this query:
 
 ### Another mystery?
 
-Although the murder is solved, I can't help but wonder if SQL City has some underlying issues that are causing its 2018 crime wave...
+Although the murder is solved, I can't help but wonder if SQL City has some underlying issues that are causing its [2018 crime wave...](insertlinkhere_
