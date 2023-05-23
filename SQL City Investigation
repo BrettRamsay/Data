@@ -1,12 +1,11 @@
-## SQL Murder Mystery Solution
+## SQL City Investigation
 
-This is my solution and rationale to the [SQL Murder Mystery](https://mystery.knightlab.com/) that I wrote on March 19th while doing SQL training. I've decided to leave it as is to evaluate what my areas of improvement are and use it for further practice. To see how an experienced Data Scientist handles this problem, you can visit [this gist written by Mikhail Popov.](https://gist.github.com/bearloga/cfc8099223d1dace2604c8737dcbb4c3)
+This is a fun project I did during May 2023 that uses the database from the SQL Murder Mystery to analyse the fictious SQL City in areas such as population distribution, crime rate, and economic inequaity. The purpose of this project was to continue to practice SQL and apply what I had learned about statistics and Python in the previous month. 
 
 
-### Starting Instructions and Database Schema
-> The crime was a ​murder​ that occurred sometime on ​Jan.15, 2018​ and that it took place in ​SQL City​. Start by retrieving the corresponding crime scene report from the police department’s database.
+### Building out SQL City
+Before performing any comparisons, I need to estimate the true size of SQL City's population. The database only has records for individuals that are between 18 and 89 years old and unless SQL City is under some cosmically extraordinary circumstances, the odds of a town of 10000 having no person under 18 or over 89 is on
 
-![](https://github.com/BrettRamsay/Data/blob/main/schema.png)
 
 ### STEP 1: Retrieve the crime scene report
 
