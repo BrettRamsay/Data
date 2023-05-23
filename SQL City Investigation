@@ -4,8 +4,7 @@ This is a fun project I did during May 2023 that uses the database from the SQL 
 
 
 ### Building out SQL City
-Before performing any comparisons, I need to estimate the true size of SQL City's population. The database only has records for individuals that are between 18 and 89 years old and unless SQL City is under some cosmically extraordinary circumstances, the odds of a town of 10000 having no person under 18 or over 89 is on
-
+The SQL City database only has around 10000 records for individuals that are between 18 and 89 years old. According to the latest US Census population distributions*, the likelihood of a population that size *just* having no one over 89 is already 2.69e-34, so it's pretty safe to assume that I'll need to estimiate values for minors and those aged 90+.
 
 ### STEP 1: Retrieve the crime scene report
 
