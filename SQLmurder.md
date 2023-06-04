@@ -122,7 +122,3 @@ Things I could've done better on this query:
 - Use COUNT to aggregate and filter the `facebook_event_check_in` query results. My query worked out fine for this example, but it could potentially cause issues with a much larger table.
 - Include a join to the `income` table. I didn't like building my queries using qualitative descriptors ("a lot of money") at the time, but it still should've been part of the query. 
 - Include gender in the 'woman' CTE. I may have watched too many spy movies and was wary of of the mastermind potentially wearing a disguise. 
-
-### Another mystery?
-
-Although the murder is solved, I can't help but wonder if SQL City has some underlying issues that are causing its [2018 crime wave...](insertlinkhere_
